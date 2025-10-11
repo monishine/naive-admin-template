@@ -1,16 +1,16 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "esnext",
     "jsx": "preserve",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "useDefineForClassFields": true,
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "module": "ESNext",
     /* Bundler mode */
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "typeRoots": ["node_modules", "src/types"],
