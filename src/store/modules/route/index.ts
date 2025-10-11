@@ -74,13 +74,13 @@ export const useRouteStore = defineStore('route', {
         this.cacheRoutes.push(route)
     },
     /** 重新加载页面 */
-    async reloadPage(route: RouteLocationNormalizedLoaded) {
+    reloadPage(route: RouteLocationNormalizedLoaded) {
       if (route.fullPath === this.currentRoute.fullPath) {
         this.isRouteLoaded = false
-        await nextTick()
         setTimeout(() => {
+          // 等待页面动画播放完毕
           this.isRouteLoaded = true
-        }, 400) // 等待 router-view 动画播放完毕，否则会看到页面闪动
+        }, 400)
       }
     },
   },
